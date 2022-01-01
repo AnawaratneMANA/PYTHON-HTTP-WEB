@@ -1,0 +1,2 @@
+Before passing values to the template.
+42.20
