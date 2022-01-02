@@ -16,9 +16,11 @@ def home():
         if len(note) < 1:
             flash("Note is too short!", category='error')
         else:
-            date = datetime.now()
+            date = datetime.now() # Date time default in the schema not working.
             new_note = Note(data=note, user_id=current_user.id, date=date)
             db.session.add(new_note)
             db.session.commit()
             flash('Note added!', category='success')
     return render_template('home.html', user=current_user)
+
+@view.route('/delete-note', methods=['POST'])
