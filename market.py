@@ -5,6 +5,6 @@ app = Flask(__name__) # built in variable.
 def hello_world():
     return "<p>Hello World</p>"
 
-@app.route('/about')
-def about_page():
-    return "About Text"
+@app.route('/about/<username>')
+def about_page(username):
+    return f'<h1>This is the dynamic Route {username}</h1>'
